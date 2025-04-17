@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    var time = DateTime.now();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -81,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 initialEntryMode: TimePickerEntryMode.dial);
 
                 if(timePicked != null){
-                  print("Selected Time : ${timePicked.hour}:${timePicked.minute}");
+                  print("Selected Time : ${timePicked.hour}: ${timePicked.minute}");
                 }
               }, child: Text(
                 'Select Time',
