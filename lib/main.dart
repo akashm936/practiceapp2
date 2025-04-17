@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -42,7 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    var time = DateTime.now();
+
+
 
     return Scaffold(
       appBar: AppBar(
@@ -70,11 +73,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
 
                   if (datePicked != null) {
-                    print("Selected Date : ${datePicked.year}: ${datePicked.month}: ${datePicked.day}");
+                    print("Selected Date : ${DateFormat('yMMMMd').format(datePicked)}");
                   }
+
                 },
                 child: Text(
-                  'Select Date',
+                  "Select Date",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -83,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     context: context,
                     initialTime: TimeOfDay.now(),
                 initialEntryMode: TimePickerEntryMode.dial);
+
 
                 if(timePicked != null){
                   print("Selected Time : ${timePicked.hour}: ${timePicked.minute}");
