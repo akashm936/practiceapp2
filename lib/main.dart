@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter/src/painting/borders.dart';
 
 void main() {
   runApp(const MyApp());
@@ -63,39 +63,63 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GridView.count(
-          crossAxisCount: 1,
+        child: GridView.extent(
+          maxCrossAxisExtent: 200,
           crossAxisSpacing: 11,
-          mainAxisSpacing: 11,
-          children: [
-            Container(color: arrColors[0],),
-            Container(color: arrColors[1],),
-            Container(color: arrColors[2],),
-            Container(color: arrColors[3],),
-            Container(color: Colors.white,
-            child: GridView.count(crossAxisCount: 3,
-            crossAxisSpacing: 11,
             mainAxisSpacing: 11,
             children: [
               Container(color: arrColors[0],),
               Container(color: arrColors[1],),
               Container(color: arrColors[2],),
               Container(color: arrColors[3],),
-              Container(color: arrColors[0],),
-              Container(color: arrColors[1],),
-              Container(color: arrColors[2],),
-              Container(color: arrColors[3],),
-            ],),),
-            Container(color: arrColors[5],),
-            Container(color: arrColors[6],),
-            Container(color: arrColors[7],),
-          ],
-        ),
+              Container(color: arrColors[4],),
+              Container(color: arrColors[5],),
+              Container(color: arrColors[6],),
+              Container(color: arrColors[7],),
+              
+            ],),
       )
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+
+// GridView.Count is here
+
+//Padding(
+//         padding: const EdgeInsets.all(8.0),
+//         child: GridView.count(
+//           crossAxisCount: 1,
+//           crossAxisSpacing: 11,
+//           mainAxisSpacing: 11,
+//           children: [
+//             Container(color: arrColors[0],),
+//             Container(color: arrColors[1],),
+//             Container(color: arrColors[2],),
+//             Container(color: arrColors[3],),
+//             Container(color: Colors.white,
+//             child: GridView.count(crossAxisCount: 3,
+//             crossAxisSpacing: 11,
+//             mainAxisSpacing: 11,
+//             children: [
+//               Container(color: arrColors[0],),
+//               Container(color: arrColors[1],),
+//               Container(color: arrColors[2],),
+//               Container(color: arrColors[3],),
+//               Container(color: arrColors[0],),
+//               Container(color: arrColors[1],),
+//               Container(color: arrColors[2],),
+//               Container(color: arrColors[3],),
+//             ],),),
+//             Container(color: arrColors[5],),
+//             Container(color: arrColors[6],),
+//             Container(color: arrColors[7],),
+//           ],
+//         ),
+//       )
+
+
 
 
 // DateTime Picker
