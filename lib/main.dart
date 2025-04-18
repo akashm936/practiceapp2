@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/src/painting/borders.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
       ),
-      home: const MyHomePage(title: 'DateTime Picker'),
+      home: const MyHomePage(title: 'Widget Splitting'),
     );
   }
 }
@@ -49,10 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
       Colors.purple,
       Colors.indigoAccent,
       Colors.lightGreenAccent,
-      Colors.red,
+      // Colors.red,
+      Colors.greenAccent,
+      Colors.white,
     ];
-
-
 
     return Scaffold(
       appBar: AppBar(
@@ -61,28 +62,117 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          NewWidget(),
-
+          ScrollCircleAvatar(arrColors: arrColors),
+          ExpandedListTile(),
+          ExpandedGridView(arrColors: arrColors),
         ],
-      )
+      ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
 
-class NewWidget extends StatelessWidget {
-  const NewWidget({
+class ExpandedGridView extends StatelessWidget {
+  const ExpandedGridView({
     super.key,
+    required this.arrColors,
   });
+
+  final List<Color> arrColors;
 
   @override
   Widget build(BuildContext context) {
-    callback(){
-      print("Button is Clicked!!!");
-    }
-    return ElevatedButton(onPressed: callback, child: Text("Click Me"));
+    return Expanded(
+      flex: 1,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          itemBuilder: (context, index) {
+            return Container(color: arrColors[index]);
+          },
+          itemCount: 8,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            crossAxisSpacing: 11,
+            mainAxisSpacing: 11,
+          ),
+        ),
+      ),
+    );
   }
 }
+
+//  This is Second Widget ExpandedListTile
+class ExpandedListTile extends StatelessWidget {
+  const ExpandedListTile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 2,
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Text(
+              "${index + 1}",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            title: Text("This is Demo"),
+            subtitle: Text("This subtitle"),
+            trailing: Icon(Icons.add, size: 25),
+          );
+        },
+        itemCount: 10,
+      ),
+    );
+  }
+}
+
+// First Widget ScrollCircleAvatar
+
+class ScrollCircleAvatar extends StatelessWidget {
+  const ScrollCircleAvatar({super.key, required this.arrColors});
+
+  final List<Color> arrColors;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 150,
+      color: Colors.red,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundColor: arrColors[index],
+              maxRadius: 50,
+              child: Text(
+                "${index + 1}",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+            ),
+          );
+        },
+        itemCount: 8,
+      ),
+    );
+  }
+}
+
+//
+// class NewWidget extends StatelessWidget {
+//   const NewWidget({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     callback() {
+//       print("Button is Clicked!!!");
+//     }
+//     return ElevatedButton(onPressed: callback, child: Text("Click Me"));
+//   }
+// }
 
 // GridView.builder are used
 
@@ -108,7 +198,6 @@ class NewWidget extends StatelessWidget {
 //         ),
 //       ),
 //     ),
-
 
 // GridView Extent
 
