@@ -11,8 +11,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
-
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -43,7 +41,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     var arrColors = [
       Colors.orange,
       Colors.blue,
@@ -52,8 +49,9 @@ class _MyHomePageState extends State<MyHomePage> {
       Colors.purple,
       Colors.indigoAccent,
       Colors.lightGreenAccent,
-      Colors.red
+      Colors.red,
     ];
+
 
 
     return Scaffold(
@@ -61,29 +59,77 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.extent(
-          maxCrossAxisExtent: 200,
-          crossAxisSpacing: 11,
-            mainAxisSpacing: 11,
-            children: [
-              Container(color: arrColors[0],),
-              Container(color: arrColors[1],),
-              Container(color: arrColors[2],),
-              Container(color: arrColors[3],),
-              Container(color: arrColors[4],),
-              Container(color: arrColors[5],),
-              Container(color: arrColors[6],),
-              Container(color: arrColors[7],),
-              
-            ],),
+      body: Column(
+        children: [
+          NewWidget(),
+
+        ],
       )
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
 
+class NewWidget extends StatelessWidget {
+  const NewWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    callback(){
+      print("Button is Clicked!!!");
+    }
+    return ElevatedButton(onPressed: callback, child: Text("Click Me"));
+  }
+}
+
+// GridView.builder are used
+
+// Padding(
+//       padding: const EdgeInsets.all(8.0),
+//       child: GridView.builder(
+//         itemBuilder: (context, index) {
+//           return Container(
+//             color: arrColors[index],
+//             child: Center(
+//               child: Text(
+//                 '${index + 1}',
+//                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+//               ),
+//             ),
+//           );
+//         },
+//         itemCount: arrColors.length,
+//         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//           crossAxisCount: 3,
+//           crossAxisSpacing: 11,
+//           mainAxisSpacing: 11,
+//         ),
+//       ),
+//     ),
+
+
+// GridView Extent
+
+// Padding(
+//         padding: const EdgeInsets.all(8.0),
+//         child: GridView.extent(
+//           maxCrossAxisExtent: 200,
+//           crossAxisSpacing: 11,
+//             mainAxisSpacing: 11,
+//             children: [
+//               Container(color: arrColors[0],),
+//               Container(color: arrColors[1],),
+//               Container(color: arrColors[2],),
+//               Container(color: arrColors[3],),
+//               Container(color: arrColors[4],),
+//               Container(color: arrColors[5],),
+//               Container(color: arrColors[6],),
+//               Container(color: arrColors[7],),
+//
+//             ],),
+//       )
 
 // GridView.Count is here
 
@@ -118,9 +164,6 @@ class _MyHomePageState extends State<MyHomePage> {
 //           ],
 //         ),
 //       )
-
-
-
 
 // DateTime Picker
 
