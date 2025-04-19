@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/src/painting/borders.dart';
+import 'package:practiceapp2/Widgets/roundedbutton.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,27 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Stack(
-        children: [
-          Container(
-            width: 200,
-            height: 200,
-            color: Colors.lightGreen,
-          ),
-          Container(
-            width: 160,
-            height: 160,
-            margin: EdgeInsets.all(15),
-            color: Colors.red,
-          ),
-          Container(
-            width: 120,
-            height: 120,
-            color: Colors.indigo,
-            margin: EdgeInsets.all(30),
-          )
-        ],
-      ),
+      body: RoundedButton(),
 
       // This trailing comma makes auto-formatting nicer for build methods.
     );
@@ -99,7 +80,29 @@ class _MyHomePageState extends State<MyHomePage> {
 //       ),
 
 
+//  Flutter Stack Widget
 
+// Stack(
+//         children: [
+//           Container(
+//             width: 200,
+//             height: 200,
+//             color: Colors.lightGreen,
+//           ),
+//           Container(
+//             width: 160,
+//             height: 160,
+//
+//             color: Colors.red,
+//           ),
+//           Container(
+//             width: 120,
+//             height: 120,
+//             color: Colors.indigo,
+//             margin: EdgeInsets.all(30),
+//           )
+//         ],
+//       ),
 
 class ExpandedGridView extends StatelessWidget {
   const ExpandedGridView({
