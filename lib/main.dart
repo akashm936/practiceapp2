@@ -60,17 +60,46 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Column(
+      body: Stack(
         children: [
-          ScrollCircleAvatar(arrColors: arrColors),
-          ExpandedListTile(),
-          ExpandedGridView(arrColors: arrColors),
+          Container(
+            width: 200,
+            height: 200,
+            color: Colors.lightGreen,
+          ),
+          Container(
+            width: 160,
+            height: 160,
+            margin: EdgeInsets.all(15),
+            color: Colors.red,
+          ),
+          Container(
+            width: 120,
+            height: 120,
+            color: Colors.indigo,
+            margin: EdgeInsets.all(30),
+          )
         ],
       ),
+
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+
+// Widget Splitting
+
+// Column(
+//         children: [
+//           ScrollCircleAvatar(arrColors: arrColors),
+//           ExpandedListTile(),
+//           ExpandedGridView(arrColors: arrColors),
+//         ],
+//       ),
+
+
+
 
 class ExpandedGridView extends StatelessWidget {
   const ExpandedGridView({
