@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
+        primaryColor: Colors.blue,
       ),
       home: const MyHomePage(title: 'Widget Splitting'),
     );
@@ -61,13 +62,25 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: RoundedButton(),
+      body: Center(
+        child: Container(
+          width: 120,
+          height: 50,
+          child: RoundedButton(
+            btnText: "Login",
+            icon: Icon(Icons.lock),
+            callback: () {
+              print("Login In");
+            },
+            textStyle: TextStyle(fontSize: 16),
+          ),
+        ),
+      ),
 
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
-
 
 // Widget Splitting
 
@@ -78,7 +91,6 @@ class _MyHomePageState extends State<MyHomePage> {
 //           ExpandedGridView(arrColors: arrColors),
 //         ],
 //       ),
-
 
 //  Flutter Stack Widget
 
@@ -105,10 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //       ),
 
 class ExpandedGridView extends StatelessWidget {
-  const ExpandedGridView({
-    super.key,
-    required this.arrColors,
-  });
+  const ExpandedGridView({super.key, required this.arrColors});
 
   final List<Color> arrColors;
 

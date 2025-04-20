@@ -7,7 +7,6 @@ class RoundedButton extends StatelessWidget {
   final TextStyle? textStyle;
   final VoidCallback? callback;
 
-
   RoundedButton({
     required this.btnText,
     this.icon,
@@ -18,8 +17,23 @@ class RoundedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: () {
-      callback!();
-    }, child: Row());
+    return ElevatedButton(
+      onPressed: () {
+        callback!();
+      },
+      child:
+          icon != null
+              ? Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+              children: [icon!,Container(width: 11,),Text(btnText, style: textStyle)])
+              : Text(btnText, style: textStyle),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: bgcolor,
+        shadowColor: bgcolor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(21))
+        )
+      )
+    );
   }
 }
