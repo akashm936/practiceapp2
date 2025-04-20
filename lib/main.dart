@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
-        primaryColor: Colors.blue,
       ),
       home: const MyHomePage(title: 'Widget Splitting'),
     );
@@ -63,17 +62,40 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Container(
-          width: 120,
-          height: 50,
-          child: RoundedButton(
-            btnText: "Login",
-            icon: Icon(Icons.lock),
-            callback: () {
-              print("Login In");
-            },
-            textStyle: TextStyle(fontSize: 16),
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 120,
+              height: 50,
+              child: RoundedButton(
+                btnText: "Play",
+                icon: Icon(Icons.play_arrow),
+                callback: () {
+                  print("Play!!!");
+                },
+                textStyle: TextStyle(fontSize: 16),
+              ),
+            ),
+            Container(
+              height: 11,
+            ),
+            Container(
+              width: 120,
+              height: 50,
+              child: RoundedButton(
+                btnText: "Login",
+                icon: Icon(Icons.lock,color: Colors.black,),
+                callback: () {
+                  print("Login In");
+                },
+                textStyle: TextStyle(fontSize: 16,color: Colors.black),
+                bgcolor: Colors.orange,
+              ),
+            )
+
+
+          ],
         ),
       ),
 
