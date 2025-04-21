@@ -61,30 +61,52 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(width: 150, height: 150, color: Colors.red),
-            SizedBox(width: 11, height: 11),
-            Container(width: 150, height: 150, color: Colors.orange),
-            SizedBox(height: 11),
-            SizedBox(
-              width: 150,
-              height: 45,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.lightGreenAccent,
-                ),
-                onPressed: () {},
-                child: Text(
-                  "Click",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.black),
+      body: Column(
+        children: [
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: 200,
+              maxWidth: double.infinity,
+              minHeight: 50,
+              minWidth: 50,
+            ),
+            child: SizedBox.expand(
+              child: Container(
+                color: Colors.lightGreenAccent,
+                child: Center(
+                  child: Text(
+                    "SizedBox.expand",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+          SizedBox(width: 11, height: 11),
+          Container(width: 150, height: 150, color: Colors.orange),
+          SizedBox(height: 11),
+          SizedBox(
+            width: 150,
+            height: 45,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.lightGreenAccent,
+              ),
+              onPressed: () {},
+              child: Text(
+                "Click",
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
