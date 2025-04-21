@@ -61,65 +61,28 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Wrap(
-          direction: Axis.vertical,
-          spacing: 11,
-          runSpacing: 11,
-          alignment: WrapAlignment.spaceEvenly,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              width: 100,
-              height: 100,
-              color: arrColors[0],
+            Container(width: 150, height: 150, color: Colors.red),
+            SizedBox(width: 11, height: 11),
+            Container(width: 150, height: 150, color: Colors.orange),
+            SizedBox(height: 11),
+            SizedBox(
+              width: 150,
+              height: 45,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.lightGreenAccent,
+                ),
+                onPressed: () {},
+                child: Text(
+                  "Click",
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.black),
+                ),
+              ),
             ),
-            Container(
-              width: 100,
-              height: 100,
-              color: arrColors[1],
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: arrColors[2],
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: arrColors[3],
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: arrColors[4],
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: arrColors[5],
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: arrColors[6],
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: arrColors[7],
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: arrColors[8],
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: arrColors[9],
-            )
           ],
         ),
       ),
@@ -128,7 +91,70 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+// Wrap Widget in the Flutter
 
+// Container(
+//         width: double.infinity,
+//         height: double.infinity,
+//         child: Wrap(
+//           direction: Axis.vertical,
+//           spacing: 11,
+//           runSpacing: 11,
+//           alignment: WrapAlignment.spaceEvenly,
+//           children: [
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: arrColors[0],
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: arrColors[1],
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: arrColors[2],
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: arrColors[3],
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: arrColors[4],
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: arrColors[5],
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: arrColors[6],
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: arrColors[7],
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: arrColors[8],
+//             ),
+//             Container(
+//               width: 100,
+//               height: 100,
+//               color: arrColors[9],
+//             )
+//           ],
+//         ),
+//       ),
 
 // Custom Widget Code
 
