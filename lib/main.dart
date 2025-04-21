@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
       Colors.purple,
       Colors.indigoAccent,
       Colors.lightGreenAccent,
-      // Colors.red,
+      Colors.red,
       Colors.greenAccent,
       Colors.white,
     ];
@@ -61,48 +61,114 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Wrap(
+          direction: Axis.vertical,
+          spacing: 11,
+          runSpacing: 11,
+          alignment: WrapAlignment.spaceEvenly,
           children: [
             Container(
-              width: 120,
-              height: 50,
-              child: RoundedButton(
-                btnText: "Play",
-                icon: Icon(Icons.play_arrow),
-                callback: () {
-                  print("Play!!!");
-                },
-                textStyle: TextStyle(fontSize: 16),
-              ),
+              width: 100,
+              height: 100,
+              color: arrColors[0],
             ),
             Container(
-              height: 11,
+              width: 100,
+              height: 100,
+              color: arrColors[1],
             ),
             Container(
-              width: 120,
-              height: 50,
-              child: RoundedButton(
-                btnText: "Login",
-                icon: Icon(Icons.lock,color: Colors.black,),
-                callback: () {
-                  print("Login In");
-                },
-                textStyle: TextStyle(fontSize: 16,color: Colors.black),
-                bgcolor: Colors.orange,
-              ),
+              width: 100,
+              height: 100,
+              color: arrColors[2],
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: arrColors[3],
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: arrColors[4],
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: arrColors[5],
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: arrColors[6],
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: arrColors[7],
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: arrColors[8],
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: arrColors[9],
             )
-
-
           ],
         ),
       ),
-
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+
+
+// Custom Widget Code
+
+// Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             Container(
+//               width: 120,
+//               height: 50,
+//               child: RoundedButton(
+//                 btnText: "Play",
+//                 icon: Icon(Icons.play_arrow),
+//                 callback: () {
+//                   print("Play!!!");
+//                 },
+//                 textStyle: TextStyle(fontSize: 16),
+//               ),
+//             ),
+//             Container(
+//               height: 11,
+//             ),
+//             Container(
+//               width: 120,
+//               height: 50,
+//               child: RoundedButton(
+//                 btnText: "Login",
+//                 icon: Icon(Icons.lock,color: Colors.black,),
+//                 callback: () {
+//                   print("Login In");
+//                 },
+//                 textStyle: TextStyle(fontSize: 16,color: Colors.black),
+//                 bgcolor: Colors.orange,
+//               ),
+//             )
+//
+//
+//           ],
+//         ),
+//       ),
 
 // Widget Splitting
 
