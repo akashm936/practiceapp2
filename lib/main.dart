@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:practiceapp2/second_screen.dart';
 // import 'package:flutter/src/painting/borders.dart';
 // import 'package:practiceapp2/Widgets/roundedbutton.dart';
 
@@ -38,7 +39,6 @@ class _MyHomePageState extends State<MyHomePage> {
   double _value = 10;
   bool isSwitch = false;
 
-
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -65,7 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
       values.end.toString(),
     );
 
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -74,37 +73,51 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         children: [
           RangeSlider(
-              min: 0,
-              max: 10,
-              labels: labels,
-              divisions: 10,
+            min: 0,
+            max: 10,
+            labels: labels,
+            divisions: 10,
 
-              values: values, onChanged: (newValue) {
-                values = newValue;
-                setState(() {
-                  print('${newValue.start}, ${newValue.end}');
-                });
-          }),
+            values: values,
+            onChanged: (newValue) {
+              values = newValue;
+              setState(() {
+                print('${newValue.start}, ${newValue.end}');
+              });
+            },
+          ),
           Slider(
             min: 0,
-              max: 10,
-              value: _value,
-              label: _value.round().toString(),
-              divisions: 10,
-              onChanged: (value1){
+            max: 10,
+            value: _value,
+            label: _value.round().toString(),
+            divisions: 10,
+            onChanged: (value1) {
               setState(() {
                 _value = value1;
                 print("$_value");
               });
-          }),
+            },
+          ),
           Switch(
             padding: EdgeInsets.all(10),
-              value: isSwitch, onChanged: (value){
-            setState(() {
-              isSwitch = value;
-              print('$isSwitch');
-            });
-          })
+            value: isSwitch,
+            onChanged: (value) {
+              setState(() {
+                isSwitch = value;
+                print('$isSwitch');
+              });
+            },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SecondScreen()),
+              );
+            },
+            child: Text("Go to Second Screen"),
+          ),
         ],
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
