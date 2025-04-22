@@ -61,7 +61,30 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Text("Hello Akash")
+      body: Center(
+        child: RichText(text: TextSpan(
+          style: TextStyle(
+            fontSize: 20, color: Colors.black
+          ),
+          children: [
+            TextSpan(
+              text: 'Hello ',
+            ),
+            TextSpan(
+              text: "Akash",style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: Colors.orange
+            )
+            ),
+            TextSpan(
+              text: "\n How are you"
+            )
+
+
+          ]
+        )),
+      )
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
