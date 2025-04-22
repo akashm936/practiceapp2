@@ -34,6 +34,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  RangeValues values = RangeValues(0, 10);
 
   void _incrementCounter() {
     setState(() {
@@ -56,39 +57,59 @@ class _MyHomePageState extends State<MyHomePage> {
     //   Colors.white,
     // ];
 
+    RangeLabels labels = RangeLabels(
+      values.start.toString(),
+      values.end.toString(),
+    );
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: RichText(text: TextSpan(
-          style: TextStyle(
-            fontSize: 20, color: Colors.black
-          ),
-          children: [
-            TextSpan(
-              text: 'Hello ',
-            ),
-            TextSpan(
-              text: "Akash",style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: Colors.orange
-            )
-            ),
-            TextSpan(
-              text: "\n How are you"
-            )
+      body: RangeSlider(
+          min: 0,
+          max: 10,
+          labels: labels,
+          divisions: 10,
 
-
-          ]
-        )),
-      )
+          values: values, onChanged: (newValue) {
+            values = newValue;
+            setState(() {
+              print('${newValue.start}, ${newValue.end}');
+            });
+      }),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+// Rich Text Widget
+
+//Center(
+//         child: RichText(text: TextSpan(
+//           style: TextStyle(
+//             fontSize: 20, color: Colors.black
+//           ),
+//           children: [
+//             TextSpan(
+//               text: 'Hello ',
+//             ),
+//             TextSpan(
+//               text: "Akash",style: TextStyle(
+//               fontSize: 25,
+//               fontWeight: FontWeight.bold,
+//               color: Colors.orange
+//             )
+//             ),
+//             TextSpan(
+//               text: "\n How are you"
+//             )
+//
+//
+//           ]
+//         )),
+//       )
 
 // SizedBox WIdgets and ConstraintBox and There Properties
 // expand, Srinke, Fix
@@ -140,8 +161,6 @@ class _MyHomePageState extends State<MyHomePage> {
 //           ),
 //         ],
 //       ),
-
-
 
 // Wrap Widget in the Flutter
 
