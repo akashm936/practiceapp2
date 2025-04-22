@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/src/painting/borders.dart';
-import 'package:practiceapp2/Widgets/roundedbutton.dart';
+// import 'package:flutter/src/painting/borders.dart';
+// import 'package:practiceapp2/Widgets/roundedbutton.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,75 +43,82 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var arrColors = [
-      Colors.orange,
-      Colors.blue,
-      Colors.pink,
-      Colors.deepPurple,
-      Colors.purple,
-      Colors.indigoAccent,
-      Colors.lightGreenAccent,
-      Colors.red,
-      Colors.greenAccent,
-      Colors.white,
-    ];
+    // var arrColors = [
+    //   Colors.orange,
+    //   Colors.blue,
+    //   Colors.pink,
+    //   Colors.deepPurple,
+    //   Colors.purple,
+    //   Colors.indigoAccent,
+    //   Colors.lightGreenAccent,
+    //   Colors.red,
+    //   Colors.greenAccent,
+    //   Colors.white,
+    // ];
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Column(
-        children: [
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              maxHeight: 200,
-              maxWidth: double.infinity,
-              minHeight: 50,
-              minWidth: 50,
-            ),
-            child: SizedBox.expand(
-              child: Container(
-                color: Colors.lightGreenAccent,
-                child: Center(
-                  child: Text(
-                    "SizedBox.expand",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(width: 11, height: 11),
-          Container(width: 150, height: 150, color: Colors.orange),
-          SizedBox(height: 11),
-          SizedBox(
-            width: 150,
-            height: 45,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.lightGreenAccent,
-              ),
-              onPressed: () {},
-              child: Text(
-                "Click",
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: Text("Hello Akash")
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+// SizedBox WIdgets and ConstraintBox and There Properties
+// expand, Srinke, Fix
+
+// Column(
+//         children: [
+//           ConstrainedBox(
+//             constraints: BoxConstraints(
+//               maxHeight: 200,
+//               maxWidth: double.infinity,
+//               minHeight: 50,
+//               minWidth: 50,
+//             ),
+//             child: SizedBox.expand(
+//               child: Container(
+//                 color: Colors.lightGreenAccent,
+//                 child: Center(
+//                   child: Text(
+//                     "SizedBox.expand",
+//                     style: TextStyle(
+//                       fontSize: 22,
+//                       fontWeight: FontWeight.bold,
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+//           SizedBox(width: 11, height: 11),
+//           Container(width: 150, height: 150, color: Colors.orange),
+//           SizedBox(height: 11),
+//           SizedBox(
+//             width: 150,
+//             height: 45,
+//             child: ElevatedButton(
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: Colors.lightGreenAccent,
+//               ),
+//               onPressed: () {},
+//               child: Text(
+//                 "Click",
+//                 style: TextStyle(
+//                   fontSize: 22,
+//                   fontWeight: FontWeight.bold,
+//                   color: Colors.black,
+//                 ),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+
+
 
 // Wrap Widget in the Flutter
 
