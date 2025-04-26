@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:practiceapp2/second_screen.dart';
 // import 'package:flutter/src/painting/borders.dart';
 // import 'package:practiceapp2/Widgets/roundedbutton.dart';
@@ -60,6 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
     //   Colors.white,
     // ];
 
+
+    // Icon Widget
+    // Font Awsome Flutter
+    // Position Widget
+
     RangeLabels labels = RangeLabels(
       values.start.toString(),
       values.end.toString(),
@@ -70,60 +76,102 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Column(
-        children: [
-          RangeSlider(
-            min: 0,
-            max: 10,
-            labels: labels,
-            divisions: 10,
-
-            values: values,
-            onChanged: (newValue) {
-              values = newValue;
-              setState(() {
-                print('${newValue.start}, ${newValue.end}');
-              });
-            },
-          ),
-          Slider(
-            min: 0,
-            max: 10,
-            value: _value,
-            label: _value.round().toString(),
-            divisions: 10,
-            onChanged: (value1) {
-              setState(() {
-                _value = value1;
-                print("$_value");
-              });
-            },
-          ),
-          Switch(
-            padding: EdgeInsets.all(10),
-            value: isSwitch,
-            onChanged: (value) {
-              setState(() {
-                isSwitch = value;
-                print('$isSwitch');
-              });
-            },
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => SecondScreen()),
-              );
-            },
-            child: Text("Go to Second Screen"),
-          ),
-        ],
-      ),
+      body: Container(
+        width: double.infinity,
+        height: 400,
+        color: Colors.lightBlue,
+        child: Stack(
+          children: [
+            Positioned(
+              bottom: 40,
+              right: 40,
+              child: Container(
+                width: 100,
+                height: 100,
+                color: Colors.orange,
+              ),
+            ),
+            Positioned(
+              bottom: 40,
+              left: 40,
+              child: Container(
+                width: 100,
+                height: 100,
+                color: Colors.purpleAccent,
+              ),
+            )
+          ],
+        ),
+      )
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
+// Icons And FontAwsome Widget
+
+// Center(child: Row(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           Icon(Icons.paypal, size: 100,), // Default Flutter Library Icons
+//           FaIcon(FontAwesomeIcons.googleDrive, size: 100, color: Colors.orange, )
+//         ],
+//       ))
+
+
+
+//  RangeSlider , Switch, and Slider, ElevatedButton
+
+// Column(
+//         children: [
+//           RangeSlider(
+//             min: 0,
+//             max: 10,
+//             labels: labels,
+//             divisions: 10,
+//
+//             values: values,
+//             onChanged: (newValue) {
+//               values = newValue;
+//               setState(() {
+//                 print('${newValue.start}, ${newValue.end}');
+//               });
+//             },
+//           ),
+//           Slider(
+//             min: 0,
+//             max: 10,
+//             value: _value,
+//             label: _value.round().toString(),
+//             divisions: 10,
+//             onChanged: (value1) {
+//               setState(() {
+//                 _value = value1;
+//                 print("$_value");
+//               });
+//             },
+//           ),
+//           Switch(
+//             padding: EdgeInsets.all(10),
+//             value: isSwitch,
+//             onChanged: (value) {
+//               setState(() {
+//                 isSwitch = value;
+//                 print('$isSwitch');
+//               });
+//             },
+//           ),
+//           ElevatedButton(
+//             onPressed: () {
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(builder: (context) => SecondScreen()),
+//               );
+//             },
+//             child: Text("Go to Second Screen"),
+//           ),
+//         ],
+//       ),
 
 // Rich Text Widget
 
