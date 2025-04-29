@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:practiceapp2/animatedContainerWidget.dart';
 import 'package:practiceapp2/second_screen.dart';
 // import 'package:flutter/src/painting/borders.dart';
 // import 'package:practiceapp2/Widgets/roundedbutton.dart';
@@ -20,93 +21,93 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
       ),
-      home: const MyHomePage(title: 'Widget Splitting'),
+      home: AnimatedContainerWidget(),
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  RangeValues values = RangeValues(0, 10);
-  double _value = 10;
-  bool isSwitch = false;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // var arrColors = [
-    //   Colors.orange,
-    //   Colors.blue,
-    //   Colors.pink,
-    //   Colors.deepPurple,
-    //   Colors.purple,
-    //   Colors.indigoAccent,
-    //   Colors.lightGreenAccent,
-    //   Colors.red,
-    //   Colors.greenAccent,
-    //   Colors.white,
-    // ];
-
-
-    // Icon Widget
-    // Font Awsome Flutter
-    // Position Widget
-
-    RangeLabels labels = RangeLabels(
-      values.start.toString(),
-      values.end.toString(),
-    );
-
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Container(
-        width: double.infinity,
-        height: 400,
-        color: Colors.lightBlue,
-        child: Stack(
-          children: [
-            Positioned(
-              bottom: 40,
-              right: 40,
-              child: Container(
-                width: 100,
-                height: 100,
-                color: Colors.orange,
-              ),
-            ),
-            Positioned(
-              bottom: 40,
-              left: 40,
-              child: Container(
-                width: 100,
-                height: 100,
-                color: Colors.purpleAccent,
-              ),
-            )
-          ],
-        ),
-      )
-      // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
+//
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key, required this.title});
+//
+//   final String title;
+//
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
+//
+// class _MyHomePageState extends State<MyHomePage> {
+//   int _counter = 0;
+//   RangeValues values = RangeValues(0, 10);
+//   double _value = 10;
+//   bool isSwitch = false;
+//
+//   void _incrementCounter() {
+//     setState(() {
+//       _counter++;
+//     });
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     // var arrColors = [
+//     //   Colors.orange,
+//     //   Colors.blue,
+//     //   Colors.pink,
+//     //   Colors.deepPurple,
+//     //   Colors.purple,
+//     //   Colors.indigoAccent,
+//     //   Colors.lightGreenAccent,
+//     //   Colors.red,
+//     //   Colors.greenAccent,
+//     //   Colors.white,
+//     // ];
+//
+//
+//     // Icon Widget
+//     // Font Awsome Flutter
+//     // Position Widget
+//
+//     RangeLabels labels = RangeLabels(
+//       values.start.toString(),
+//       values.end.toString(),
+//     );
+//
+//     return Scaffold(
+//       appBar: AppBar(
+//         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+//         title: Text(widget.title),
+//       ),
+//       body: Container(
+//         width: double.infinity,
+//         height: 400,
+//         color: Colors.lightBlue,
+//         child: Stack(
+//           children: [
+//             Positioned(
+//               bottom: 40,
+//               right: 40,
+//               child: Container(
+//                 width: 100,
+//                 height: 100,
+//                 color: Colors.orange,
+//               ),
+//             ),
+//             Positioned(
+//               bottom: 40,
+//               left: 40,
+//               child: Container(
+//                 width: 100,
+//                 height: 100,
+//                 color: Colors.purpleAccent,
+//               ),
+//             )
+//           ],
+//         ),
+//       )
+//       // This trailing comma makes auto-formatting nicer for build methods.
+//     );
+//   }
+// }
 
 // Icons And FontAwsome Widget
 
