@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:practiceapp2/AnimationSeries/animatedContainerWidget.dart';
+import 'package:practiceapp2/AnimationSeries/animatedcrossfade.dart';
 import 'package:practiceapp2/AnimationSeries/animatedopacitywidget.dart';
 import 'package:practiceapp2/second_screen.dart';
 // import 'package:flutter/src/painting/borders.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
       ),
-      home: AnimatedOpacityWidget(),
+      home: AnimatedCrossFadeWidget(),
     );
   }
 }
