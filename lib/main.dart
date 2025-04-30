@@ -5,6 +5,8 @@ import 'package:practiceapp2/AnimationSeries/animatedContainerWidget.dart';
 import 'package:practiceapp2/AnimationSeries/animatedcrossfade.dart';
 import 'package:practiceapp2/AnimationSeries/animatedopacitywidget.dart';
 import 'package:practiceapp2/second_screen.dart';
+
+import 'AnimationSeries/heroanimatedwidget1.dart';
 // import 'package:flutter/src/painting/borders.dart';
 // import 'package:practiceapp2/Widgets/roundedbutton.dart';
 
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
       ),
-      home: AnimatedCrossFadeWidget(),
+      home: HeroAnimationWidget1(),
     );
   }
 }
