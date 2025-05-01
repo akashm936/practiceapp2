@@ -4,10 +4,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:practiceapp2/AnimationSeries/animatedContainerWidget.dart';
 import 'package:practiceapp2/AnimationSeries/animatedcrossfade.dart';
 import 'package:practiceapp2/AnimationSeries/animatedopacitywidget.dart';
+import 'package:practiceapp2/DynamicApp/fetchapi1.dart';
 import 'package:practiceapp2/DynamicApp/weatherapp.dart';
 import 'package:practiceapp2/second_screen.dart';
 
 import 'AnimationSeries/heroanimatedwidget1.dart';
+import 'DynamicApp/imageGallary.dart';
 // import 'package:flutter/src/painting/borders.dart';
 // import 'package:practiceapp2/Widgets/roundedbutton.dart';
 
@@ -25,8 +27,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
+        appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: Colors.blue)
       ),
-      home: MyWeatherApp(),
+      home: Imagegallary(),
     );
   }
 }
