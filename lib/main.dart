@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:practiceapp2/AnimationSeries/animatedContainerWidget.dart';
 import 'package:practiceapp2/AnimationSeries/animatedcrossfade.dart';
 import 'package:practiceapp2/AnimationSeries/animatedopacitywidget.dart';
+import 'package:practiceapp2/DynamicApp/weatherapp.dart';
 import 'package:practiceapp2/second_screen.dart';
 
 import 'AnimationSeries/heroanimatedwidget1.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
       ),
-      home: HeroAnimationWidget1(),
+      home: MyWeatherApp(),
     );
   }
 }
