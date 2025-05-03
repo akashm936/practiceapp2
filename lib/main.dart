@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:practiceapp2/AnimationSeries/animatedContainerWidget.dart';
 import 'package:practiceapp2/AnimationSeries/animatedcrossfade.dart';
 import 'package:practiceapp2/AnimationSeries/animatedopacitywidget.dart';
+import 'package:practiceapp2/DynamicApp/fetchImages.dart';
 import 'package:practiceapp2/DynamicApp/fetchapi1.dart';
 import 'package:practiceapp2/DynamicApp/weatherapp.dart';
 import 'package:practiceapp2/second_screen.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
         floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: Colors.blue)
       ),
-      home: Imagegallary(),
+      home: FetchImagesApi(),
     );
   }
 }
